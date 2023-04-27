@@ -31,7 +31,7 @@ class CameraPage extends StatelessWidget {
           saveConfig: SaveConfig.photoAndVideo(
             photoPathBuilder: () => path(CaptureMode.photo),
             videoPathBuilder: () => path(CaptureMode.video),
-            initialCaptureMode: CaptureMode.photo,
+            initialCaptureMode: CaptureMode.photo, 
           ),
           enablePhysicalButton: true,
           filter: AwesomeFilter.AddictiveRed,

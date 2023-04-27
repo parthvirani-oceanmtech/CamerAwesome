@@ -40,8 +40,7 @@ class SensorConfig {
   late BehaviorSubject<double> _zoomController;
 
   /// Use this stream to debounce brightness events
-  final BehaviorSubject<double> _brightnessController =
-      BehaviorSubject<double>();
+  final BehaviorSubject<double> _brightnessController = BehaviorSubject<double>();
   StreamSubscription? _brightnessSubscription;
 
   SensorConfig({
@@ -58,8 +57,7 @@ class SensorConfig {
     _flashModeController = BehaviorSubject<FlashMode>.seeded(flash);
     flashMode$ = _flashModeController.stream;
 
-    _mirrorFrontCameraController =
-        BehaviorSubject<bool>.seeded(mirrorFrontCamera);
+    _mirrorFrontCameraController = BehaviorSubject<bool>.seeded(mirrorFrontCamera);
     mirrorFrontCamera$ = _mirrorFrontCameraController.stream;
 
     _sensorTypeController = BehaviorSubject<SensorType>.seeded(type);
@@ -116,11 +114,8 @@ class SensorConfig {
       case FlashMode.none:
         newFlashMode = FlashMode.auto;
         break;
-      case FlashMode.on:
-        newFlashMode = FlashMode.always;
-        break;
       case FlashMode.auto:
-        newFlashMode = FlashMode.on;
+        newFlashMode = FlashMode.always;
         break;
       case FlashMode.always:
         newFlashMode = FlashMode.none;
