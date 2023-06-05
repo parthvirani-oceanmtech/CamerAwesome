@@ -16,7 +16,7 @@ dependencies:
   colorfilter_generator: ^0.0.8
   flutter:
     sdk: flutter
-  image: ^4.0.15
+  image: ^3.0.2
     # photofilters:
   # git: https://github.com/svenopdehipt/photofilters.git
   rxdart: ^0.27.7

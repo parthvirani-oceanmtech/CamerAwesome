@@ -38,13 +38,9 @@ Future<File> applyFilter(PhotoFilterModel model) async {
 
   final pixels = image.getBytes();
   model.filter.apply(pixels, image.width, image.height);
-  final img.Image out = img.Image.fromBytes(
-    width: image.width,
-    height: image.height,
-    bytes: pixels.buffer,
-  );
+  final img.Image out = img.Image.fromBytes(image.width, image.height, pixels);
 
-  final List<int>? encodedImage = img.encodeNamedImage(model.path, out);
+  final List<int>? encodedImage = img.encodeNamedImage(out, model.path);
   if (encodedImage == null) {
     throw MediaCapture.failure(
       exception: Exception("could not encode image"),
